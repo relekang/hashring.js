@@ -4,21 +4,40 @@ export HashRing
 
 class HashRing
   defaultNodeWeight: 200
-  keys: []
-  ring: {}
+  keys: null
+  ring: null
 
-  init: (hasher) ->
-    @hasher = hasher
+  init: () ->
+    @keys = []
+    @ring = {}
 
-  add: (node, weight) ->
+  addNode: (node, weight) ->
     weight = weight or @defaultNodeWeight
     key = @createKey(node)
     @ring[key] = node
     @keys.push(key)
     @keys.sort()
+    return key
 
-  remove: () ->
-    throw 'NotImplemented'
+  removeNode: (node) ->
+    key = @createKey(node)
+    delete @ring[key]
+    @keys.splice(@keys.indexOf(key), 1)
 
   createKey: (node) ->
     return sha1(JSON.stringify(node))
+
+  getNodePosition: (key) ->
+    if @isEmpty()
+      return [null, null]
+
+    for i, node in @keys
+      if parseInt(key, 16) <= parseInt(node, 16)
+        return [i, @keys[i]]
+    return [0, @keys[0]]
+
+  getNodeForKey: (key) ->
+    return @ring[@getNodePosition(key)[1]]
+
+  isEmpty: () ->
+    return Object.size(@ring) == 0
