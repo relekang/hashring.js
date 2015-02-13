@@ -1,0 +1,11 @@
+import chai: expect
+import ../lib/ObjectUtils
+
+describe('Object.size', () ->
+  it('should return correct size of object', () ->
+    expect(Object.size({})).to.equal(0)
+    expect(Object.size({ a: 1 })).to.equal(1)
+    expect(Object.size({ a: 1 b: 2 })).to.equal(2)
+    expect(Object.size({ a: 1 b: 2 c: 3 })).to.equal(3)
+  )
+)

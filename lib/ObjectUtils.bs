@@ -1,0 +1,6 @@
+Object.size = (obj) ->
+  size = 0
+  for key, value of obj
+    if obj.hasOwnProperty(key)
+        size++
+  return size
