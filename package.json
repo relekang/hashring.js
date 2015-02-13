@@ -24,8 +24,12 @@
     "sha1": "^1.1.0"
   },
   "devDependencies": {
-    "chai": "^2.0.0",
-    "istanbul": "^0.3.5",
-    "mocha": "^2.1.0"
+    "chai": "*",
+    "istanbul": "*",
+    "karma": "*",
+    "karma-browserify": "*",
+    "karma-mocha": "*",
+    "karma-phantomjs-launcher": "*",
+    "mocha": "*"
   }
 }
