@@ -1,3 +1,4 @@
+import sha1
 import ./ObjectUtils
 export HashRing
 
@@ -20,9 +21,4 @@ class HashRing
     throw 'NotImplemented'
 
   createKey: (node) ->
-    # FIXME, dummy function to make sure add tests does not break
-    #        until this is implemented.
-    return JSON.stringify(node).split("").reduce((a,b) ->
-      a= ((a << 5) - a) + b.charCodeAt(0)
-      return a&a
-    , 0)
+    return sha1(JSON.stringify(node))

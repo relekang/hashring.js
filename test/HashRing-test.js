@@ -41,6 +41,22 @@ describe('HashRing', function() {
             expect(instance.keys).to.equal(keys);
         });
     });
+
+    describe('.createKey(node)', function() {
+        it('should return the same hash for same value', function() {
+            expect(instance.createKey({})).to.equal(instance.createKey({}));
+            expect(instance.createKey({
+                'a': 'hi there'
+            })).to.equal(instance.createKey({
+                'a': 'hi there'
+            }));
+        });
+        it('should return diffeent hash for same value', function() {
+            expect(instance.createKey({})).to.not.equal(instance.createKey({
+                'a': 'hi there'
+            }));
+        });
+    });
 });
 
 
