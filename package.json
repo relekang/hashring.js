@@ -1,0 +1,30 @@
+{
+  "name": "hashring.js",
+  "version": "0.1.0",
+  "description": "Hashring algorithm for node and browserify",
+  "main": "lib/HashRing.js",
+  "scripts": {
+    "test": "istanbul test _mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/relekang/hashring.js.git"
+  },
+  "keywords": [
+    "hashring"
+  ],
+  "author": "Rolf Erik Lekang <me@rolflekang.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relekang/hashring.js/issues"
+  },
+  "homepage": "https://github.com/relekang/hashring.js",
+  "dependencies": {
+    "bailey": "0.0.15"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0"
+  }
+}

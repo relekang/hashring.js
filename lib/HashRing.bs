@@ -1,0 +1,14 @@
+export HashRing
+
+class HashRing
+  defaultNodeWeight: 200
+
+  init: (hasher) ->
+    @hasher = hasher
+
+  add: (node, weight) ->
+    weight = weight or @defaultNodeWeight
+    throw 'NotImplemented'
+
+  remove: () ->
+    throw 'NotImplemented'
