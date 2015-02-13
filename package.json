@@ -28,6 +28,7 @@
     "istanbul": "*",
     "karma": "*",
     "karma-browserify": "*",
+    "karma-cli": "*",
     "karma-mocha": "*",
     "karma-phantomjs-launcher": "*",
     "mocha": "*"
